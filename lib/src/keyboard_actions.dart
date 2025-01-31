@@ -232,7 +232,7 @@ class KeyboardActionstate extends State<KeyboardActions>
       FocusScope.of(context).requestFocus(_currentAction!.focusNode);
     }
     await Future.delayed(const Duration(milliseconds: 100));
-    bottomAreaAvoiderKey.currentState?.scrollToOverscroll();
+    bottomAreaAvoidKey.currentState?.scrollToOverscroll();
   }
 
   void _onTapUp() {
@@ -414,13 +414,16 @@ class KeyboardActionstate extends State<KeyboardActions>
         ? _kBarSize
         : 0; // offset for the actions bar
 
-    final keyboardHeight = WidgetsBinding
-        .instance.platformDispatcher.views.first.viewInsets.bottom;
+    // final keyboardHeight = WidgetsBinding
+    //     .instance.platformDispatcher.views.first.viewInsets.bottom;
+    final keyboardHeight = EdgeInsets.fromViewPadding(
+      View.of(context).viewInsets,
+      View.of(context).devicePixelRatio,
+    ).bottom;
     newOffset += keyboardHeight; // + offset for the system keyboard
 
     if (_currentFooter != null) {
-      newOffset +=
-          _currentFooter!.preferredSize.height; // + offset for the footer
+      newOffset += _currentFooter!.preferredSize.height;
     }
 
     newOffset -= _localMargin + _distanceBelowWidget;
@@ -581,7 +584,7 @@ class KeyboardActionstate extends State<KeyboardActions>
     );
   }
 
-  final GlobalKey<BottomAreaAvoiderState> bottomAreaAvoiderKey =
+  final GlobalKey<BottomAreaAvoiderState> bottomAreaAvoidKey =
       GlobalKey<BottomAreaAvoiderState>();
 
   @override
@@ -593,12 +596,12 @@ class KeyboardActionstate extends State<KeyboardActions>
               width: double.maxFinite,
               key: _keyParent,
               child: BottomAreaAvoider(
-                key: bottomAreaAvoiderKey,
+                key: bottomAreaAvoidKey,
                 areaToAvoid: _offset,
                 overscroll: widget.overscroll,
                 duration: Duration(
-                    milliseconds:
-                        (_timeToDismiss.inMilliseconds * 1.8).toInt()),
+                  milliseconds: (_timeToDismiss.inMilliseconds * 1.8).toInt(),
+                ),
                 autoScroll: widget.autoScroll,
                 physics: widget.bottomAvoiderScrollPhysics,
                 child: widget.child,

@@ -41,34 +41,38 @@ class _KeyboardExampleScreenState extends State<KeyboardExampleScreen> {
         /// by Default KeyboardActions is scrollable.
         /// If you don't want KeyboardActions to manage the scroll then you need make
         /// autoScroll : false
-        autoScroll: true,
+        autoScroll: false,
         config: KeyboardDoneConfiguration(
           context: context,
           focusNodes: [_focusNode],
         ).buildConfig,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Example usage of DoneKeyboard package",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            TextFormField(
-              controller: _inputController,
-              focusNode: _focusNode,
-              decoration: InputDecoration(
-                hintText: 'Enter text here...',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 14,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "Enter Demo Text",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _inputController,
+                focusNode: _focusNode,
+                decoration: InputDecoration(
+                  hintText: 'Enter text here...',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 14,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
