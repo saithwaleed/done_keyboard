@@ -33,7 +33,7 @@ dependencies:
 
 
   done_keyboard:
-    path: ../../
+    path: ../
 #      git:
 #        url: https://github.com/saithwaleed/done_keyboard
 
