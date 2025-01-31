@@ -10,7 +10,7 @@ class KeyboardDoneConfiguration {
 
   KeyboardActionsConfig get buildConfig {
     return KeyboardActionsConfig(
-      keyboardActionsPlatform: KeyboardActionsPlatform.ALL,
+      keyboardActionsPlatform: KeyboardActionsPlatform.all,
       keyboardBarColor: Colors.grey[200],
       nextFocus: true,
       actions: focusNodes

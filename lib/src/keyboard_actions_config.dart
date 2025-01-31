@@ -28,7 +28,7 @@ class KeyboardActionsConfig {
   final Widget? defaultDoneWidget;
 
   const KeyboardActionsConfig({
-    this.keyboardActionsPlatform = KeyboardActionsPlatform.ALL,
+    this.keyboardActionsPlatform = KeyboardActionsPlatform.all,
     this.nextFocus = true,
     this.actions,
     this.keyboardBarColor,
