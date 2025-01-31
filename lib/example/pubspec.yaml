@@ -32,6 +32,10 @@ dependencies:
     sdk: flutter
 
 
+  done_keyboard:
+    path: ../../
+#      git:
+#        url: https://github.com/saithwaleed/done_keyboard
 
 
   # The following adds the Cupertino Icons font to your application.
