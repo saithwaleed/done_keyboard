@@ -1,5 +1,5 @@
 name: done_keyboard
-description: "A new Flutter package project."
+description: "A Flutter package to manage the keyboard and avoid UI overlap issues when input fields are focused."
 version: 0.0.1
 homepage: https://github.com/saithwaleed/done_keyboard
 
