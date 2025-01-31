@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.9
+- Done input layout animation fixed
+
 ## 0.0.8
 - Example issue minor changes
 
