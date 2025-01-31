@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.8
+- Example issue minor changes
+
 ## 0.0.3
 - Fixed UI glitches in the keyboard overlay.
 - Improved performance for better responsiveness.
